@@ -1,0 +1,287 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    transition: 0.2s;
+}
+
+body{
+    background: radial-gradient(at top,#2e324b,#282c49,#191E3E);
+    background-attachment: fixed;
+    height: 100vh;
+}
+
+button{
+    all: unset;
+}
+
+/*  ##### Header ##### */
+
+.header{
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    margin-bottom: 100px;
+
+}
+
+.scoreboard{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding: 20px 20px;
+    width: 45vw;
+    height: 110px;
+    border: #5f6880aa 3px solid;
+    border-radius: 20px;
+}
+
+.score{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5px;
+    height: 95%;
+    width: 150px;
+    background-color: rgba(255, 255, 255, 0.858);
+    border-radius: 20px;
+}
+.score span{
+    color: #3C4997;
+    font-size: 20px;
+    font-weight: 800;
+    
+    letter-spacing: 1px;
+    width: 50%;
+    
+}
+
+.score p{
+    color: #56546B;
+    font-size: 60px;
+    font-weight: 800;
+}
+
+
+/* ##### Main div ##### */
+
+.step {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ##### step one ##### */
+.step_one{
+    height: 340px;
+    display: flex;
+}
+
+.main img{
+    position: absolute;
+    scale: 0.7;
+    
+}
+
+.bubbles_div_step_one{
+    width: 380px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.top_bubbles_div{
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bubble{
+    position:relative;
+    height: 115px;
+    width: 115px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: inset 0em 0.3em rgba(0, 0, 0, 0.2);
+    background-size: 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.bubbles_div_step_one .bubble:hover{
+    cursor: pointer;
+    scale: 1.1;
+}
+
+.paper{
+    border: #5A70F0 solid 20px;
+    background-image: url("images/icon-paper.svg");
+}
+.rock{
+    border: #C94D5D solid 20px;
+    background-image: url("images/icon-rock.svg");
+}
+.scissors{
+    border: #E0A635 solid 20px;
+    background-image: url("images/icon-scissors.svg");
+}
+
+
+/* ##### step twonthree ##### */
+
+.step_twonthree{
+    display: none;
+    height: 280px;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.step_twonthree div{
+    display: flex;
+    justify-content: center;
+    gap: 20vw;
+    text-align: center;
+    align-items: center;
+}
+.headlines_step_twonthree span{
+    width: 155px;
+    color: white;
+    letter-spacing: 1px;
+    font-weight: 700;
+    font-size: 18px;
+    scale: 1.3;
+    white-space: nowrap;
+
+}
+
+.bubbles_div_step_twonthree{
+margin-top: 50px;
+}
+
+.bubbles_div_step_twonthree > .bubble{
+    scale: 1.3;
+}
+
+.center_msg{
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    justify-content: center;
+    gap: 5px;
+}
+
+.center_msg span{
+    color: white;
+    text-align: center;
+    width: 200px;
+    font-size: 45px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.center_msg button{
+    height: 50px;
+    background-color: white;
+    border-radius: 10px ;
+    text-align: center;
+    color: #A64659;
+    letter-spacing: 2px;
+    font-size: 15px;
+}
+
+.center_msg button:hover{
+    cursor: pointer;
+    scale: 1.02;
+}
+
+/* ##### fading ##### */
+
+/* .fading{
+} */
+
+/* ##### bottom ##### */
+
+.bottom{
+    position: fixed;
+    bottom: 0px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.bottom button{
+    color: #56546B;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 8px 35px;
+    border: #56546B 2px solid;
+    border-radius: 10px;
+}
+
+.bottom button:hover{
+    cursor: pointer;
+    scale: 1.02;
+}
+
+.grey{
+    margin: 26px;
+    background-color: rgba(0, 0, 0, 0.258);
+    box-shadow: none;
+}
+/* Rules after press */
+
+.grey_screen{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    background-color: rgba(0, 0, 0, 0.267);
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.rules_div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    height: 370px;
+    width: 350px;
+
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.rules_div div{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rules_div div span{
+    color: #3C415F;
+    font-size: 35px;
+    font-weight: 700;   
+}
+.rules_div div img{
+    height: 20px;    
+}
+.rules_div div img:hover{
+    cursor: pointer;
+    scale: 1.02;
+}

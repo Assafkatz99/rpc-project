@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Rock, Paper, Scissors</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+  <!-- ##### Header ##### -->
+
+  <div class="header">
+    <div class="scoreboard">
+      <img src="images/logo.svg">
+      <div class="score">
+        <span>SCORE</span>
+        <p id="score_p"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ##### Main div ##### -->
+  <div class="main">
+    <!-- ##### step one ##### -->
+    <div class="step_one step">
+    <img src="images/bg-triangle.svg">
+    <div class="bubbles_div_step_one">
+    <div class="top_bubbles_div">
+      <div id="paper_button_id" class="paper bubble"></div>
+      <div id="scissors_button_id" class="scissors bubble"></div>
+    </div>
+    <div id="rock_button_id" class="rock bubble"></div>
+    </div>
+  </div>
+
+    <!-- ##### step twonthree ##### -->
+    <div class="step_twonthree step">
+      <div class="headlines_step_twonthree">
+        <span>YOU PICKED</span>
+        <span>THE HOUSE PICKED</span>
+      </div>
+      <div class="bubbles_div_step_twonthree">
+        <div id="left_bubble" class="bubble"></div>
+        <div id="right_bubble" class="bubble"></div>
+        <section class="center_msg">
+          <span id="result_notice_span_id">YOU LOSE</span>
+          <button id="play_again_button_id">PLAY AGAIN</button>
+        </section>
+      </div>
+    </div>
+
+
+
+    <!-- ##### white fading ##### -->
+    
+  </div>
+
+  <!-- ##### Bottom ##### -->
+  <div class="bottom">
+  <button id="reset_button_id">RESET SCORE</button>
+  <button id="rules_button_id">RULES</button>
+  </div>
+
+  <!-- Rules after press -->
+  <div class="grey_screen">
+    <div class="rules_div">
+      <div>
+        <span>RULES</span>
+        <img id="exit_rules_id" src="images/icon-close.svg">
+      </div>
+      <img src="images/image-rules.svg">  
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
