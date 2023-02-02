@@ -136,15 +136,17 @@ const buttle = (arg: IGameHands) => {
       let center_msg = document.querySelector(".center_msg") as HTMLDivElement;
       center_msg.style.display = "flex";
 
-      let headlines_step_twonthree = document.querySelector(
-        ".headlines_step_twonthree"
-      ) as HTMLDivElement;
-      headlines_step_twonthree.style.gap = "40vw";
+      if (window.innerWidth > 800) {
+        let headlines_step_twonthree = document.querySelector(
+          ".headlines_step_twonthree"
+        ) as HTMLDivElement;
+        headlines_step_twonthree.style.gap = "40vw";
 
-      let bubbles_div_step_twonthree = document.querySelector(
-        ".bubbles_div_step_twonthree"
-      ) as HTMLDivElement;
-      bubbles_div_step_twonthree.style.gap = "40vw";
+        let bubbles_div_step_twonthree = document.querySelector(
+          ".bubbles_div_step_twonthree"
+        ) as HTMLDivElement;
+        bubbles_div_step_twonthree.style.gap = "40vw";
+      }
 
       let fading = document.querySelectorAll(".fading");
 
@@ -156,7 +158,11 @@ const buttle = (arg: IGameHands) => {
 
         for (const element of fading) {
           (element as HTMLElement).style.display = "unset";
-          (element as HTMLElement).style.left = "-322px";
+          if (window.innerWidth < 800) {
+            (element as HTMLElement).style.left = "-344px";
+          } else {
+            (element as HTMLElement).style.left = "-322px";
+          }
         }
       } else if (result_value === "YOU LOSE") {
         count--;
@@ -166,7 +172,11 @@ const buttle = (arg: IGameHands) => {
 
         for (const element of fading) {
           (element as HTMLElement).style.display = "unset";
-          (element as HTMLElement).style.right = "-322px";
+          if (window.innerWidth < 800) {
+            (element as HTMLElement).style.left = "-344px";
+          } else {
+            (element as HTMLElement).style.right = "-322px";
+          }
         }
       }
 

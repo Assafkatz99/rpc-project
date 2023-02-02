@@ -91,10 +91,12 @@ var buttle = function (arg) {
             result_notice_span_id.innerHTML = result_value;
             var center_msg = document.querySelector(".center_msg");
             center_msg.style.display = "flex";
-            var headlines_step_twonthree = document.querySelector(".headlines_step_twonthree");
-            headlines_step_twonthree.style.gap = "40vw";
-            var bubbles_div_step_twonthree = document.querySelector(".bubbles_div_step_twonthree");
-            bubbles_div_step_twonthree.style.gap = "40vw";
+            if (window.innerWidth > 800) {
+                var headlines_step_twonthree = document.querySelector(".headlines_step_twonthree");
+                headlines_step_twonthree.style.gap = "40vw";
+                var bubbles_div_step_twonthree = document.querySelector(".bubbles_div_step_twonthree");
+                bubbles_div_step_twonthree.style.gap = "40vw";
+            }
             var fading = document.querySelectorAll(".fading");
             if (result_value === "YOU WIN") {
                 count++;
@@ -104,7 +106,12 @@ var buttle = function (arg) {
                 for (var _i = 0, fading_1 = fading; _i < fading_1.length; _i++) {
                     var element = fading_1[_i];
                     element.style.display = "unset";
-                    element.style.left = "-322px";
+                    if (window.innerWidth < 800) {
+                        element.style.left = "-344px";
+                    }
+                    else {
+                        element.style.left = "-322px";
+                    }
                 }
             }
             else if (result_value === "YOU LOSE") {
@@ -115,7 +122,12 @@ var buttle = function (arg) {
                 for (var _a = 0, fading_2 = fading; _a < fading_2.length; _a++) {
                     var element = fading_2[_a];
                     element.style.display = "unset";
-                    element.style.right = "-322px";
+                    if (window.innerWidth < 800) {
+                        element.style.left = "-344px";
+                    }
+                    else {
+                        element.style.right = "-322px";
+                    }
                 }
             }
             setTimeout(function () {

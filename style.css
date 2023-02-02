@@ -6,7 +6,7 @@
 }
 
 body {
-  background: radial-gradient(at top, #2e324b, #282c49, #191e3e);
+  background: radial-gradient(at top, #35394d, #1e213c, #191e3e);
   background-attachment: fixed;
   height: 100vh;
 }
@@ -221,6 +221,7 @@ button {
 .fading {
   display: none;
   /* right: -322px; */
+  overflow: hidden;
 
   width: 800px;
   height: 800px;
@@ -245,7 +246,7 @@ button {
 /* ##### bottom ##### */
 
 .bottom {
-  position: fixed;
+  position: absolute;
   bottom: 0px;
   width: 100vw;
   display: flex;
@@ -324,4 +325,135 @@ button {
 .rules_div div img:hover {
   cursor: pointer;
   scale: 1.02;
+}
+
+@media screen and (max-width: 800px) {
+  .scoreboard {
+    width: 80vw;
+    height: 80px;
+  }
+
+  .scoreboard img {
+    height: 80%;
+  }
+
+  .score {
+    width: 100px;
+  }
+
+  .score span {
+    font-size: 18px;
+  }
+  .score p {
+    font-size: 40px;
+  }
+
+  .step_one {
+    height: 350px;
+    display: flex;
+    margin-top: 100px;
+  }
+
+  .main img {
+    position: absolute;
+    scale: 0.8;
+  }
+
+  .bubbles_div_step_one {
+    width: 350px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .bubble {
+    height: 85px;
+    width: 85px;
+    background-size: 50%;
+  }
+
+  .paper {
+    border: #5a70f0 solid 13px;
+  }
+  .rock {
+    border: #c94d5d solid 13px;
+  }
+  .scissors {
+    border: #e0a635 solid 13px;
+  }
+  .spock {
+    border: #44bccf solid 13px;
+  }
+  .lizard {
+    border: #8a57e2 solid 13px;
+  }
+
+  .step_twonthree {
+    flex-direction: column-reverse;
+  }
+
+  .step_twonthree div {
+    gap: 18vw;
+  }
+
+  .headlines_step_twonthree span {
+    font-size: 12px;
+    width: 120px;
+  }
+
+  .center_msg {
+    position: absolute;
+    bottom: -270px;
+    gap: 20px;
+
+    animation: slide-in 0.5s ease-in-out forwards;
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  @keyframes slide-in {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .center_msg button {
+    color: #434156;
+  }
+
+  .header {
+    margin-bottom: 30px;
+  }
+
+  .rules_div {
+    height: 50%;
+    width: 80%;
+  }
+
+  .rules_div img {
+    height: 70%;
+    width: auto;
+  }
+  .rules_div div {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .rules_div div span {
+    color: #3c415f;
+    font-size: 35px;
+    font-weight: 700;
+  }
+  .rules_div div img {
+    height: 20px;
+  }
+  .rules_div div img:hover {
+    cursor: pointer;
+    scale: 1.02;
+  }
 }
