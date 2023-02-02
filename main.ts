@@ -173,7 +173,7 @@ const buttle = (arg: IGameHands) => {
         for (const element of fading) {
           (element as HTMLElement).style.display = "unset";
           if (window.innerWidth < 800) {
-            (element as HTMLElement).style.left = "-344px";
+            (element as HTMLElement).style.right = "-344px";
           } else {
             (element as HTMLElement).style.right = "-322px";
           }
