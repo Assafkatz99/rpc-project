@@ -123,7 +123,7 @@ var buttle = function (arg) {
                     var element = fading_2[_a];
                     element.style.display = "unset";
                     if (window.innerWidth < 800) {
-                        element.style.left = "-344px";
+                        element.style.right = "-344px";
                     }
                     else {
                         element.style.right = "-322px";
