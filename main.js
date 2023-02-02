@@ -3,6 +3,9 @@ var count;
 var countStr = localStorage.getItem("count");
 if (!countStr) {
     count = 0;
+    if (score_p !== null) {
+        score_p.innerHTML = String(count);
+    }
     localStorage.setItem("count", JSON.stringify(count));
 }
 else {
@@ -36,18 +39,28 @@ var hands;
     hands["Rock"] = "rock";
     hands["Paper"] = "paper";
     hands["Scissors"] = "scissors";
+    hands["Lizard"] = "lizard";
+    hands["Spock"] = "spock";
 })(hands || (hands = {}));
 var paperb = document.getElementById("paper_button_id");
 paperb === null || paperb === void 0 ? void 0 : paperb.addEventListener("click", function () {
-    buttle({ userHand: hands.Paper, userCanWin: [hands.Rock] });
+    buttle({ userHand: hands.Paper, userCanWin: [hands.Rock, hands.Spock] });
 });
 var rockb = document.getElementById("rock_button_id");
 rockb === null || rockb === void 0 ? void 0 : rockb.addEventListener("click", function () {
-    buttle({ userHand: hands.Rock, userCanWin: [hands.Scissors] });
+    buttle({ userHand: hands.Rock, userCanWin: [hands.Scissors, hands.Lizard] });
 });
 var scissorsb = document.getElementById("scissors_button_id");
 scissorsb === null || scissorsb === void 0 ? void 0 : scissorsb.addEventListener("click", function () {
-    buttle({ userHand: hands.Scissors, userCanWin: [hands.Paper] });
+    buttle({ userHand: hands.Scissors, userCanWin: [hands.Paper, hands.Lizard] });
+});
+var lizardb = document.getElementById("lizard_button_id");
+lizardb === null || lizardb === void 0 ? void 0 : lizardb.addEventListener("click", function () {
+    buttle({ userHand: hands.Lizard, userCanWin: [hands.Paper, hands.Spock] });
+});
+var spockb = document.getElementById("spock_button_id");
+spockb === null || spockb === void 0 ? void 0 : spockb.addEventListener("click", function () {
+    buttle({ userHand: hands.Spock, userCanWin: [hands.Scissors, hands.Rock] });
 });
 var buttle = function (arg) {
     var step_one = document.querySelector(".step_one");
@@ -82,16 +95,27 @@ var buttle = function (arg) {
             headlines_step_twonthree.style.gap = "40vw";
             var bubbles_div_step_twonthree = document.querySelector(".bubbles_div_step_twonthree");
             bubbles_div_step_twonthree.style.gap = "40vw";
+            var fading = document.querySelectorAll(".fading");
             if (result_value === "YOU WIN") {
                 count++;
                 if (score_p !== null) {
                     score_p.style.color = "#2db865";
+                }
+                for (var _i = 0, fading_1 = fading; _i < fading_1.length; _i++) {
+                    var element = fading_1[_i];
+                    element.style.display = "unset";
+                    element.style.left = "-322px";
                 }
             }
             else if (result_value === "YOU LOSE") {
                 count--;
                 if (score_p !== null) {
                     score_p.style.color = "#C94D5D";
+                }
+                for (var _a = 0, fading_2 = fading; _a < fading_2.length; _a++) {
+                    var element = fading_2[_a];
+                    element.style.display = "unset";
+                    element.style.right = "-322px";
                 }
             }
             setTimeout(function () {
@@ -105,6 +129,12 @@ var buttle = function (arg) {
             localStorage.setItem("count", JSON.stringify(count));
             var play_again_button_idules_button = document.getElementById("play_again_button_id");
             play_again_button_idules_button === null || play_again_button_idules_button === void 0 ? void 0 : play_again_button_idules_button.addEventListener("click", function () {
+                for (var _i = 0, fading_3 = fading; _i < fading_3.length; _i++) {
+                    var element = fading_3[_i];
+                    element.style.display = "none";
+                    element.style.right = "none";
+                    element.style.left = "none";
+                }
                 window.location.reload();
             });
         }, 1000);
