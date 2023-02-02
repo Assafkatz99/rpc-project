@@ -351,7 +351,7 @@ button {
   .step_one {
     height: 350px;
     display: flex;
-    margin-top: 100px;
+    margin-top: 5vh;
   }
 
   .main img {
@@ -405,7 +405,7 @@ button {
 
   .center_msg {
     position: absolute;
-    bottom: -270px;
+    bottom: -30vh;
     gap: 20px;
 
     animation: slide-in 0.5s ease-in-out forwards;
